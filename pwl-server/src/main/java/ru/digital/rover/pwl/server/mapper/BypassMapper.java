@@ -28,9 +28,9 @@ public class BypassMapper implements Converter<BypassEntity, BypassDto> {
                         inspectionResult.getWireBreakPercent(),
                         inspectionResult.getIsolatorLostPercent(),
                         inspectionResult.getGvpShiftedPercent(),
-                        inspectionResult.getScore()
+                        inspectionResult.score()
                 )).collect(Collectors.toList()),
-                source.getHasDefects(),
+                source.hasDefects(),
                 source.getIsScheduled()
         );
     }

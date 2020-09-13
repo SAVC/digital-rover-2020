@@ -5,7 +5,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.digital.rover.pwl.server.domain.model.BypassEntity;
-import ru.digital.rover.pwl.server.domain.model.InspectionResult;
+import ru.digital.rover.pwl.server.domain.model.InspectionResultEntity;
 import ru.digital.rover.pwl.server.domain.repository.BypassRepository;
 import ru.digital.rover.pwl.server.model.BypassDto;
 import ru.digital.rover.pwl.server.model.BypassRequest;
@@ -46,7 +46,7 @@ public class BypassService {
 
     public BypassDto addInspectionResult(Long id, InspectionResultDto inspectionResultDto) {
         BypassEntity bypassEntity = bypassRepository.findById(id).orElseThrow();
-        bypassEntity.getResults().add(modelMapper.map(inspectionResultDto, InspectionResult.class));
+        bypassEntity.getResults().add(modelMapper.map(inspectionResultDto, InspectionResultEntity.class));
         return modelMapper.map(bypassRepository.save(bypassEntity), BypassDto.class);
     }
 

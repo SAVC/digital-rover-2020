@@ -4,22 +4,21 @@ import org.modelmapper.Converter;
 import org.modelmapper.spi.MappingContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import ru.digital.rover.pwl.server.domain.model.InspectionResult;
+import ru.digital.rover.pwl.server.domain.model.InspectionResultEntity;
 import ru.digital.rover.pwl.server.model.InspectionResultDto;
 
 @Transactional
 @Component
-public class InspectionResultDtoMapper implements Converter<InspectionResultDto, InspectionResult> {
+public class InspectionResultDtoMapper implements Converter<InspectionResultDto, InspectionResultEntity> {
 
     @Override
-    public InspectionResult convert(MappingContext<InspectionResultDto, InspectionResult> context) {
+    public InspectionResultEntity convert(MappingContext<InspectionResultDto, InspectionResultEntity> context) {
         InspectionResultDto source = context.getSource();
-        return new InspectionResult(
+        return new InspectionResultEntity(
                 source.getNodeId(),
                 source.getWireBreakPercent(),
                 source.getIsolatorLostPercent(),
-                source.getGvpShiftedPercent(),
-                source.getScore()
+                source.getGvpShiftedPercent()
         );
     }
 }

@@ -11,7 +11,7 @@ spring:
         username: postgres
     jpa:
         hibernate:
-            ddl-auto: create-drop
+            ddl-auto: none
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
         properties:
             hibernate:

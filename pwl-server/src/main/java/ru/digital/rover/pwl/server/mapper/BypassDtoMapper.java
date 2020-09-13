@@ -17,7 +17,6 @@ public class BypassDtoMapper implements Converter<BypassRequest, BypassEntity> {
         BypassEntity destination = context.getDestination() == null ? new BypassEntity() : context.getDestination();
         destination.setBypassTime(source.getBypassTime());
         destination.setDescription(source.getDescription());
-        destination.setHasDefects(source.getHasDefects());
         destination.setIsScheduled(source.getIsScheduled());
         return destination;
     }

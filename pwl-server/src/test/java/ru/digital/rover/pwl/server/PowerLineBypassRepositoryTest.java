@@ -25,7 +25,7 @@ public class PowerLineBypassRepositoryTest {
 
     @Test
     void dbTest() {
-        bypassRepository.save(new BypassEntity("123", LocalDateTime.now(), Collections.emptyList(), false, true));
+        bypassRepository.save(new BypassEntity("123", LocalDateTime.now(), Collections.emptyList(), true));
         List<BypassEntity> all = bypassRepository.findAll();
         Assert.assertEquals(1, all.size());
     }

@@ -5,10 +5,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +20,12 @@ import java.util.List;
 @Table(name = "bypass_records")
 public class BypassEntity extends BaseEntity<Long> {
 
-    public BypassEntity(String description, LocalDateTime bypassTime, List<InspectionResult> results, Boolean hasDefects, Boolean isScheduled) {
+    private final float BOUNDARY = 0.6f;
+
+    public BypassEntity(String description, LocalDateTime bypassTime, List<InspectionResultEntity> results, Boolean isScheduled) {
         this.description = description;
         this.bypassTime = bypassTime;
         this.results = results;
-        this.hasDefects = hasDefects;
         this.isScheduled = isScheduled;
     }
 
@@ -41,10 +39,22 @@ public class BypassEntity extends BaseEntity<Long> {
     @LastModifiedDate
     private LocalDateTime updateDate;
 
-    @ElementCollection
-    private List<InspectionResult> results = new ArrayList<>();
-
-    private Boolean hasDefects;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<InspectionResultEntity> results = new ArrayList<>();
 
     private Boolean isScheduled;
+
+    public Boolean hasDefects() {
+        boolean hasDefect = false;
+        for (InspectionResultEntity result : results) {
+            if (result.getGvpShiftedPercent() > BOUNDARY || result.getWireBreakPercent() > BOUNDARY || result.getIsolatorLostPercent() > BOUNDARY) {
+                hasDefect = true;
+                break;
+            }
+        }
+        return hasDefect;
+    }
 }
