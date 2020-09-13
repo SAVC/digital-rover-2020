@@ -1,0 +1,9 @@
+train: ./data/train
+val: ./data/good
+
+# number of classes
+nc: 4
+
+# class names
+names: ['insulator','defected','gap','offset']
+
