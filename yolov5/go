@@ -1,2 +1,2 @@
 pip install -r  requirements.txt
-python train.py --img 416 --batch 8 --epochs 150 --data ./data/elephant.yaml --cfg ./models/yolov5l.yaml --weights '' --device 0
+python train.py --img 416 --batch 8 --epochs 150 --data ./data/elephant.yaml --cfg ./models/yolov5s.yaml --weights '' --device 0
