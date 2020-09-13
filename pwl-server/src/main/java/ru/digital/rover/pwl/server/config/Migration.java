@@ -1,7 +1,6 @@
 package ru.digital.rover.pwl.server.config;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import ru.digital.rover.pwl.server.domain.model.BypassEntity;
 import ru.digital.rover.pwl.server.domain.model.InspectionResultEntity;
 import ru.digital.rover.pwl.server.domain.repository.BypassRepository;
@@ -11,6 +10,9 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 
+/**
+ * Test data. Uncomment @Component if you want fill database
+ */
 @RequiredArgsConstructor
 //@Component
 public class Migration {
