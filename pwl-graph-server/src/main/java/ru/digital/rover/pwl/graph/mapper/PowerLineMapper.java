@@ -9,6 +9,9 @@ import ru.digital.rover.pwl.graph.model.PowerLineNodeDto;
 
 import java.util.stream.Collectors;
 
+/**
+ * Convert domain model to representation
+ */
 @Transactional
 @Component
 public class PowerLineMapper implements Converter<PowerLineNode, PowerLineNodeDto> {

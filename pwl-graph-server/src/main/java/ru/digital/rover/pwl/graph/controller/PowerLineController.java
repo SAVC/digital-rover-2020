@@ -9,6 +9,9 @@ import ru.digital.rover.pwl.graph.service.PowerLineService;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * OpenAPI for Power Lines
+ */
 @RequiredArgsConstructor
 @RequestMapping("/power-line-node")
 @RestController

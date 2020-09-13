@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+/**
+ * Mapper config
+ */
 @Configuration
 public class ModelMapperConfig {
 

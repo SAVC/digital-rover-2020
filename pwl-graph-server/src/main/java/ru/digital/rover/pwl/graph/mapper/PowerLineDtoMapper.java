@@ -7,6 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.digital.rover.pwl.graph.domain.PowerLineNode;
 import ru.digital.rover.pwl.graph.model.PowerLineNodeRequest;
 
+/**
+ * Converter Power line request to domain model
+ */
 @Transactional
 @Component
 public class PowerLineDtoMapper implements Converter<PowerLineNodeRequest, PowerLineNode> {
