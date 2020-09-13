@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>   
+<html>   
+  
+<head>  
+    <title>  
+        How to convert JSON data to a 
+        html table using JavaScript ? 
+    </title> 
+      
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+</head>  
+  
+<body style = "text-align:center;" id = "body">   
+      
+    <h1 style = "color:green;" >   
+        GeeksForGeeks   
+    </h1> 
+      
+    <p id = "GFG_UP" style =  
+        "font-size: 15px; font-weight: bold;"> 
+    </p> 
+      
+    <button onclick = "constructTable('#table')"> 
+        click here 
+    </button> 
+      
+    <br><br> 
+      
+    <table align = "center"
+            id="table" border="1"> 
+    </table> 
+
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+        
+        <script type="text/javascript">
+        $.getJSON('response_1599995155193.json', function(data){
+            alert('asdas');
+            alert(data.list[1].name);
+        });
+        </script>
+
+      
+    <script> 
+        var el_up = document.getElementById("GFG_UP"); 
+
+
+
+          
+        var list = [ 
+
+  {
+    "id": 1,
+    "description": "First test bypass, just planed and without results",
+    "bypassTime": "2020-09-13T10:47:59.281217",
+    "createDate": "2020-09-13T10:48:00.201306",
+    "updateDate": "2020-09-13T10:48:00.201306",
+    "results": [],
+    "hasDefects": false,
+    "isScheduled": true
+  },
+  {
+    "id": 2,
+    "description": "Alert test bypass!!!",
+    "bypassTime": "2020-09-13T10:48:00.244059",
+    "createDate": "2020-09-13T10:48:00.244537",
+    "updateDate": "2020-09-13T10:48:00.244537",
+    "results": [],
+    "hasDefects": false,
+    "isScheduled": false
+  },
+  {
+    "id": 3,
+    "description": "Test bypass with results",
+    "bypassTime": "2020-09-13T10:48:00.247891",
+    "createDate": "2020-09-13T10:48:00.248472",
+    "updateDate": "2020-09-13T10:48:00.248472",
+    "results": [
+      {
+        "nodeId": 1,
+        "wireBreakPercent": 0.2,
+        "isolatorLostPercent": 0.4,
+        "gvpShiftedPercent": 0.35,
+        "score": 0.3166667
+      },
+      {
+        "nodeId": 2,
+        "wireBreakPercent": 0.12,
+        "isolatorLostPercent": 0.43,
+        "gvpShiftedPercent": 0.6,
+        "score": 0.38333336
+      },
+      {
+        "nodeId": 3,
+        "wireBreakPercent": 0.01,
+        "isolatorLostPercent": 0.42,
+        "gvpShiftedPercent": 0.43,
+        "score": 0.28666666
+      },
+      {
+        "nodeId": 4,
+        "wireBreakPercent": 0.1,
+        "isolatorLostPercent": 0.41,
+        "gvpShiftedPercent": 0.5,
+        "score": 0.33666667
+      }
+    ],
+    "hasDefects": false,
+    "isScheduled": true
+  },
+  {
+    "id": 4,
+    "description": "Test bypass with results",
+    "bypassTime": "2020-09-13T10:48:00.262874",
+    "createDate": "2020-09-13T10:48:00.263344",
+    "updateDate": "2020-09-13T10:48:00.263344",
+    "results": [
+      {
+        "nodeId": 5,
+        "wireBreakPercent": 0.24444,
+        "isolatorLostPercent": 0.624565,
+        "gvpShiftedPercent": 0.35,
+        "score": 0.406335
+      },
+      {
+        "nodeId": 6,
+        "wireBreakPercent": 0.14234324,
+        "isolatorLostPercent": 0.256,
+        "gvpShiftedPercent": 0.898,
+        "score": 0.43211445
+      },
+      {
+        "nodeId": 7,
+        "wireBreakPercent": 0.5634534,
+        "isolatorLostPercent": 0.8979,
+        "gvpShiftedPercent": 0.43,
+        "score": 0.63045114
+      },
+      {
+        "nodeId": 8,
+        "wireBreakPercent": 0.6256,
+        "isolatorLostPercent": 0.8989,
+        "gvpShiftedPercent": 0.689896,
+        "score": 0.738132
+      }
+    ],
+    "hasDefects": true,
+    "isScheduled": true
+  },
+  {
+    "id": 5,
+    "description": "First test bypass, just planed and without results",
+    "bypassTime": "2020-09-13T10:48:15.87434",
+    "createDate": "2020-09-13T10:48:16.729992",
+    "updateDate": "2020-09-13T10:48:16.729992",
+    "results": [],
+    "hasDefects": false,
+    "isScheduled": true
+  },
+  {
+    "id": 6,
+    "description": "Alert test bypass!!!",
+    "bypassTime": "2020-09-13T10:48:16.763215",
+    "createDate": "2020-09-13T10:48:16.763566",
+    "updateDate": "2020-09-13T10:48:16.763566",
+    "results": [],
+    "hasDefects": false,
+    "isScheduled": false
+  },
+  {
+    "id": 7,
+    "description": "Test bypass with results",
+    "bypassTime": "2020-09-13T10:48:16.766386",
+    "createDate": "2020-09-13T10:48:16.766748",
+    "updateDate": "2020-09-13T10:48:16.766748",
+    "results": [
+      {
+        "nodeId": 1,
+        "wireBreakPercent": 0.2,
+        "isolatorLostPercent": 0.4,
+        "gvpShiftedPercent": 0.35,
+        "score": 0.3166667
+      },
+      {
+        "nodeId": 2,
+        "wireBreakPercent": 0.12,
+        "isolatorLostPercent": 0.43,
+        "gvpShiftedPercent": 0.6,
+        "score": 0.38333336
+      },
+      {
+        "nodeId": 3,
+        "wireBreakPercent": 0.01,
+        "isolatorLostPercent": 0.42,
+        "gvpShiftedPercent": 0.43,
+        "score": 0.28666666
+      },
+      {
+        "nodeId": 4,
+        "wireBreakPercent": 0.1,
+        "isolatorLostPercent": 0.41,
+        "gvpShiftedPercent": 0.5,
+        "score": 0.33666667
+      }
+    ],
+    "hasDefects": false,
+    "isScheduled": true
+  },
+  {
+    "id": 8,
+    "description": "Test bypass with results",
+    "bypassTime": "2020-09-13T10:48:16.778156",
+    "createDate": "2020-09-13T10:48:16.778513",
+    "updateDate": "2020-09-13T10:48:16.778513",
+    "results": [
+      {
+        "nodeId": 5,
+        "wireBreakPercent": 0.24444,
+        "isolatorLostPercent": 0.624565,
+        "gvpShiftedPercent": 0.35,
+        "score": 0.406335
+      },
+      {
+        "nodeId": 6,
+        "wireBreakPercent": 0.14234324,
+        "isolatorLostPercent": 0.256,
+        "gvpShiftedPercent": 0.898,
+        "score": 0.43211445
+      },
+      {
+        "nodeId": 7,
+        "wireBreakPercent": 0.5634534,
+        "isolatorLostPercent": 0.8979,
+        "gvpShiftedPercent": 0.43,
+        "score": 0.63045114
+      },
+      {
+        "nodeId": 8,
+        "wireBreakPercent": 0.6256,
+        "isolatorLostPercent": 0.8989,
+        "gvpShiftedPercent": 0.689896,
+        "score": 0.738132
+      }
+    ],
+    "hasDefects": true,
+    "isScheduled": true
+  }
+
+
+
+
+        ]; 
+          
+        el_up.innerHTML = "Click on the button to create " 
+                +   "the table from the JSON data.<br><br>" 
+                + JSON.stringify(list[0]) + "<br>"  
+                + JSON.stringify(list[1]) + "<br>" 
+                + JSON.stringify(list[2]);    
+              
+        function constructTable(selector) { 
+              
+            // Getting the all column names 
+            var cols = Headers(list, selector);   
+   
+            // Traversing the JSON data 
+            for (var i = 0; i < list.length; i++) { 
+                var row = $('<tr/>');    
+                for (var colIndex = 0; colIndex < cols.length; colIndex++) 
+                { 
+                    var val = list[i][cols[colIndex]]; 
+                      
+                    // If there is any key, which is matching 
+                    // with the column name 
+                    if (val == null) val = "";   
+                        row.append($('<td/>').html(val)); 
+                } 
+                  
+                // Adding each row to the table 
+                $(selector).append(row); 
+            } 
+        } 
+          
+        function Headers(list, selector) { 
+            var columns = []; 
+            var header = $('<tr/>'); 
+              
+            for (var i = 0; i < list.length; i++) { 
+                var row = list[i]; 
+                  
+                for (var k in row) { 
+                    if ($.inArray(k, columns) == -1) { 
+                        columns.push(k); 
+                          
+                        // Creating the header 
+                        header.append($('<th/>').html(k)); 
+                    } 
+                } 
+            } 
+              
+            // Appending the header to the table 
+            $(selector).append(header); 
+                return columns; 
+        }        
+    </script>  
+</body>   
+  
+</html> 
